@@ -17,8 +17,6 @@ import com.example.notwaste.data.database.AppDatabase;
 import com.example.notwaste.data.model.Ingredient;
 import com.example.notwaste.data.model.NotificationItem;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class ExpireAlarmReceiver extends BroadcastReceiver {
@@ -39,12 +37,14 @@ public class ExpireAlarmReceiver extends BroadcastReceiver {
             int dday = calculateDday(i.getExpireDate());
 
             if (dday <= 1) {
-                String msg;
+                String msg = "";
 
-                if (dday == 0)
-                    msg = i.getName() + "의 유통기한이 오늘까지입니다.";
-                else
+                if (dday == 1)
                     msg = i.getName() + "의 유통기한이 1일 남았습니다.";
+                else if (dday == 0)
+                    msg = i.getName() + "의 유통기한이 오늘까지입니다.";
+                else if (dday < 0)
+                    msg = i.getName() + "의 유통기한이" + Math.abs(dday) + "일 지났습니다.";
 
                 NotificationItem item =
                         new NotificationItem(msg, now, dday);
@@ -54,8 +54,6 @@ public class ExpireAlarmReceiver extends BroadcastReceiver {
         }
 
         showSystemNotification(context);
-
-        Log.d("ALARM", "🔥 Alarm Received!"); // 테스트용
     }
 
     private void showSystemNotification(Context context) {
