@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/menu_fridge"
+        android:icon="@drawable/ic_fridge"
+        android:title="냉장고" />
+
+    <item
+        android:id="@+id/menu_recipe"
+        android:icon="@drawable/ic_recipe"
+        android:title="레시피" />
+
+    <item
+        android:id="@+id/menu_mypage"
+        android:icon="@drawable/ic_mypage"
+        android:title="마이페이지" />
+
+</menu>

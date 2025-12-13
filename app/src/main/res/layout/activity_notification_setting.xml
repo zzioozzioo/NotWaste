@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 타이틀 -->
+        <TextView
+            android:text="알림 설정"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- 알림 ON/OFF -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/rounded_box"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="유통기한 알림 받기"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Switch
+                android:id="@+id/switchNotify"
+                android:thumbTint="@color/light_gray_selector"
+                android:trackTint="@color/light_gray_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- 시간대 + 주기 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/rounded_box"
+            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 시간대 -->
+            <TextView
+                android:text="알림 시간대"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTimePicker"
+                android:text="오전 9:00"
+                android:textSize="16sp"
+                android:backgroundTint="@color/dark_gray"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <!-- 주기 -->
+            <TextView
+                android:text="알림 주기"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupCycle"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioDaily"
+                    android:text="매일"
+                    android:buttonTint="@color/light_gray_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/radioWeekly"
+                    android:text="매주"
+                    android:buttonTint="@color/light_gray_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/radioOnce"
+                    android:text="당일만"
+                    android:buttonTint="@color/light_gray_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- 저장 버튼 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:text="저장하기"
+            android:textSize="18sp"
+            android:backgroundTint="@color/very_dark_gray"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="56dp" />
+    </LinearLayout>
+
+</ScrollView>
