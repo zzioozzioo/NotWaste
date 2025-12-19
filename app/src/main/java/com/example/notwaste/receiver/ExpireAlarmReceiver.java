@@ -8,7 +8,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
@@ -43,8 +42,8 @@ public class ExpireAlarmReceiver extends BroadcastReceiver {
                     msg = i.getName() + "의 유통기한이 1일 남았습니다.";
                 else if (dday == 0)
                     msg = i.getName() + "의 유통기한이 오늘까지입니다.";
-                else if (dday < 0)
-                    msg = i.getName() + "의 유통기한이" + Math.abs(dday) + "일 지났습니다.";
+                else
+                    msg = i.getName() + "의 유통기한이 " + Math.abs(dday) + "일 지났습니다.";
 
                 NotificationItem item =
                         new NotificationItem(msg, now, dday);
